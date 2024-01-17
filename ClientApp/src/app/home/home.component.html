@@ -1,0 +1,160 @@
+<div>
+
+  <Head>
+    <title>OpenAI Chatbot</title>
+  </Head>
+  <div class="main">
+    <h1>EWRS Documents Analyses</h1>
+    <div>
+      <label>
+        <input type="checkbox" (change)="handleCheckboxChange($event)" [checked]="isEpi" />
+        Epidemiologist
+      </label>
+    </div>
+    
+    <div class="col-12">
+      <button type="button" class="btn btn-success btn-sm mt-2" (click)="getDocListMetadata()"><span><i
+            className="fas fa-edit"></i></span> Get documents metadata</button>
+    </div>
+    <div class="mt-2">
+      <mat-progress-bar mode="indeterminate" class="custom-progress-bar"
+        [ngClass]="{'hidden-div': !isProgreeBarShow}"></mat-progress-bar>
+    </div>
+    <!-- List of documents in folder -->
+    <!-- <select size="10" class="form-control mt-3">
+      <option *ngFor="let option of documentList" [value]="option" [ngStyle]="{'color': isExcelFile(option) ? 'green' : 'black'}">{{ option }}</option>
+    </select> -->
+
+    <ul class="list-group mt-3">
+      <li *ngFor="let option of documentList" [ngStyle]="{'color': isExcelFile(option) ? 'green' : 'black'}">{{ option }}</li>
+    </ul>
+
+    <button id="file-input-button"  (click)="openFileExplorer()" class="btn btn-secondary btn-sm mt-3">Explorer</button>
+    <input #fileInput type="file" style="display: none" (change)="onFileSelected($event)" accept="*/*">
+
+    
+
+    <hr>
+
+    <!-- Drop zone -->
+    <!-- <div class="row">
+      <div class="col-12">
+        <ngx-file-drop dropZoneLabel="Drop files here" contentClassName="ngx-file" dropZoneClassName="my-style"
+          (onFileDrop)="dropped($event)" (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)">
+          <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+              class="bi bi-file-earmark-arrow-up-fill" viewBox="0 0 16 16">
+              <path
+                d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM6.354 9.854a.5.5 0 0 1-.708-.708l2-2a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 8.707V12.5a.5.5 0 0 1-1 0V8.707L6.354 9.854z" />
+            </svg>
+          </ng-template>
+        </ngx-file-drop>
+        <div class="upload-table">
+          <table class="table">
+            <tbody class="upload-name-style">
+              <tr *ngFor="let item of files; let i=index">
+                <td><strong>{{ item.relativePath }}</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- <div class="col-12">
+      <button type="button" class="btn btn-success btn-sm" (click)="getMetadata()"><span><i
+            className="fas fa-edit"></i></span> Get metadata</button>
+    </div>
+
+    <div class="row">
+      <div class="col-6">
+        <div class="row mt-2">
+          <div class="col-3 text-start">
+            Title
+          </div>
+          <div class="col-9">
+            <input class="form-control" type="text" [value]="metaData?.title" aria-label="Title" disabled readonly>
+          </div>
+        </div>
+
+        <div class="row mt-2">
+          <div class="col-3 text-start">
+            Area
+          </div>
+          <div class="col-9">
+            <input class="form-control" type="text" value='Risk communication' aria-label="Categories" disabled
+              readonly>
+          </div>
+        </div>
+
+        <div class="row mt-2">
+          <div class="col-3 text-start">
+            Type
+          </div>
+          <div class="col-9">
+            <input class="form-control" type="text" [value]="metaData?.type" aria-label="type" disabled readonly>
+          </div>
+        </div>
+
+        <div class="row mt-2">
+          <div class="col-3 text-start">
+            Language
+          </div>
+          <div class="col-9">
+            <input class="form-control" type="text" [value]="metaData?.language" aria-label="Categories" disabled
+              readonly>
+          </div>
+        </div>
+
+        <div class="row mt-2">
+          <div class="col-3 text-start">
+            Categorie
+          </div>
+          <div class="col-9">
+            <input class="form-control" type="text" [value]="metaData?.category" aria-label="Categories" disabled
+              readonly>
+          </div>
+        </div>
+
+        <div class="row mt-2">
+          <div class="col-3 text-start">
+            Agent
+          </div>
+          <div class="col-9">
+            <input class="form-control" type="text" value="" aria-label="Categories" disabled readonly>
+          </div>
+        </div>
+
+        <div class="row mt-2">
+          <div class="col-3 text-start">
+            Disease
+          </div>
+          <div class="col-9">
+            <input class="form-control" type="text" [value]="metaData?.disease" aria-label="Categories" disabled
+              readonly>
+          </div>
+        </div>
+
+        <div class="row mt-2">
+          <div class="col-3 text-start">
+            Tags
+          </div>
+          <div class="col-9">
+            <input class="form-control" type="text" [value]="metaData?.tags" aria-label="Tags" disabled readonly>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <div class="row mt-2">
+          <div class="col-2 text-start">
+            Source
+          </div>
+          <div class="col-10">
+            <textarea class="form-control" type="text" [(ngModel)]="theText" aria-label="Tags" disabled readonly
+              rows="14"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->

@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\_git\\OpenAI\\EwrsDocAnalyses\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.EwrsDocAnalyses.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.EwrsDocAnalyses.props",
+      "PackagePath": "build\\EwrsDocAnalyses.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.EwrsDocAnalyses.props",
+      "PackagePath": "buildMultiTargeting\\EwrsDocAnalyses.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.EwrsDocAnalyses.props",
+      "PackagePath": "buildTransitive\\EwrsDocAnalyses.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

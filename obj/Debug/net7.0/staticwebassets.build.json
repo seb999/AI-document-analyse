@@ -1,0 +1,39 @@
+{
+  "Version": 1,
+  "Hash": "Rx7qbcdxr5PcfYwNBUrOdEbR8A49TuAUHcnXbz+VUeo=",
+  "Source": "EwrsDocAnalyses",
+  "BasePath": "_content/EwrsDocAnalyses",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "EwrsDocAnalyses\\wwwroot",
+      "Source": "EwrsDocAnalyses",
+      "ContentRoot": "C:\\_git\\OpenAI\\EwrsDocAnalyses\\wwwroot\\",
+      "BasePath": "_content/EwrsDocAnalyses",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\_git\\OpenAI\\EwrsDocAnalyses\\wwwroot\\favicon.ico",
+      "SourceId": "EwrsDocAnalyses",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\_git\\OpenAI\\EwrsDocAnalyses\\wwwroot\\",
+      "BasePath": "_content/EwrsDocAnalyses",
+      "RelativePath": "favicon.ico",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\favicon.ico"
+    }
+  ]
+}

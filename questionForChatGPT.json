@@ -1,0 +1,70 @@
+{
+    "Title": {
+        "Question": "What title can you give to this document. Provide me only the title as result withoput quote",
+        "Sublist": []
+    },
+    "Type": {
+        "Question": "Type this text into one of the following types:",
+        "Sublist": [
+            "Case definition",
+            "Communication (plan/toolkit)",
+            "Factsheet",
+            "Guidance",
+            "Legislation and regulation (incl. MOU)",
+            "Lines to take",
+            "Other",
+            "Preparedness plan",
+            "Press-release/press article and statement",
+            "Rapid outbreak assessment",
+            "Rapid risk assessment",
+            "Response plan",
+            "Risk assessment",
+            "Scientific article/publication",
+            "Situation report",
+            "Surveillance data summary",
+            "Travel advice",
+            "Simulation scenario",
+            "Simulation report",
+            "Simulation after action review"
+        ]
+    },
+    "Language": {
+        "Question": "Identify the document's language. Return only the langauge",
+        "Sublist": []
+    },
+    "Category": {
+        "Question": "Categorize this text into only one of the following categories:",
+        "Sublist": [
+            "Biological origin: Communicable diseases",
+            "Biological origin: Antimicrobial resistance and healthcare-assoc. infections related to comm. diseases",
+            "Biological origin: Biotoxins or other harmful biological agents not related to communicable diseases",
+            "Chemical origin",
+            "Environmental origin",
+            "Unknown origin"
+        ]
+    },
+    "Tags": {
+        "Question": "Please provide me a list of 3 tags for this document separated with coma mark in the format 'tag1; tag2; tag3;'",
+        "Sublist": []
+    },
+    "Disease": {
+        "Question": "If this document is talking about a disease, provide me the disease only. Provide me only the desease otherwise reply nothing",
+        "Sublist": []
+    },
+    "Area": {
+        "Question": "Categorize this text into only one of the following area from that list:",
+        "Sublist": [
+            "Notification",
+            "Risk Assessment",
+            "Incident Management",
+            "Risk Communication",
+            "Preparedness",
+            "Simulation",
+            "Upcoming Events"
+        ]
+    },
+    "Summary": {
+        "Question": "Write me a summary of the document",
+        "Sublist": []
+    }
+}
